@@ -1,0 +1,15 @@
+Robotic Arm
+
+ stepper for rotation - slush stepper motor port 0 - - On Slush 
+ stepper rotation homing proximity sensor slush port S0 - On Slush I/O Breakout
+ Low Tower proximity sensor S1 - On Slush I/O Breakout 
+ Upper Tower proximity sensor S2 - On Slush I/O Breakout 
+ electromagnet PWM - RPiMIB P4 - On RPiMIB
+ pneumatic piston PWM - RPiMIB PA4 - On Slush I2C I/O Breakout
+
+Perpetual Motion Machine
+stepper for ramp - slush stepper motor poer 0 -  - On Slush
+Gate Servo - PWM - RPiMIB P4 - On RPiMIB
+Stairs DC Motor - PWM - RPiMID P5 - On RPiMIB
+Bottom ramp Sensor  J13 - On Slush I/O Breakout
+Top Ramp Sensor J5- On Slush I/O Breakout

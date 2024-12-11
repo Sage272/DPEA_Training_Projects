@@ -1,0 +1,143 @@
+<MainScreen>:
+    name: 'main'
+    FloatLayout:
+        size_hint: None, None
+
+	##################
+	##### BUTTONS ####
+        ##################
+
+	# Quit button
+
+        BetterImageButton:
+            font_size: 23
+            size_hint: None, None
+            size: root.width * 0.02, root.width * 0.02
+            x: root.width * 0.965
+            y: root.height * 0.94
+            color: 0, 0, 0, 1
+            on_release: root.quit()
+
+        Label:
+            id: quitLabel
+            text: "X"
+            halign: 'center'
+            valign: 'center'
+            font_size: 30
+            bold: False
+            x: root.width * 0.9495
+            y: root.height * 0.912
+            color: 1, 1, 1, 1
+
+        BetterImageButton:
+            id: auto
+            color: 0.917, 0.796, 0.380, 1
+            center_x: root.width * 0.5
+            y: root.height * 0.55
+            background_color: 1, 0, 0, 0
+            background_normal: ''
+            size_hint: None,None
+            size: 175,175
+            on_press: root.auto()
+
+        Label:
+            id: autoLabel
+            text: "Start"
+            halign: 'center'
+            valign: 'center'
+            font_size: 35
+            bold: True
+            center_x: root.width * 0.5
+            y: root.height * 0.585
+            color: 0, 0, 0, 1
+
+        # Turn on/off gate
+        BetterImageButton:
+            id: armControl
+            color: root.yellow
+            center_x: root.width * 0.35
+            y: root.height * 0.35
+            size_hint: None,None
+            size: 175,175
+            on_press: root.homeArm()
+
+        Label:
+            id: armControlLabel
+            text: "Home\nArm"
+            halign: 'center'
+            valign: 'center'
+            font_size: 35
+            bold: True
+            center_x: root.width * 0.35
+            y: root.height * 0.385
+            color: 0, 0, 0, 1
+
+        BetterImageButton:
+            id: magnetControl
+            color: root.yellow
+            text: "Hold Ball"
+            center_x: root.width * 0.65
+            y: root.height * 0.35
+            size_hint: None,None
+            size: 175,175
+            on_press: root.toggleMagnet()
+
+        Label:
+            id: magnetControlLabel
+            text: "Hold\nBall"
+            halign: 'center'
+            valign: 'center'
+            font_size: 35
+            bold: True
+            center_x: root.width * 0.65
+            y: root.height * 0.385
+            color: 0, 0, 0, 1
+
+	##################
+	##### SLIDERS ####
+        ##################
+
+        Slider:
+            id: moveArm
+            orientation: 'horizontal'
+            min: 0
+            max: 2
+            value: root.armPosition
+            step: 1
+            center_x: root.width * 0.6
+            y: root.height * 0.15
+            size_hint_x: 7
+            value_track_color: root.blue
+            on_value: root.setArmPosition(self.value)
+
+        ##################
+	##### LABELS #####
+        ##################
+
+        Label:
+            id: title
+            text: 'Robotic Arm'
+            font_size: 55
+            bold: True
+            center_x: root.width * 0.5
+            halign: 'center'
+            y: root.height * 0.75
+            color: 1, 1, 1, 1
+
+        Label:
+            id: armControlLabel
+            text: 'Arm Position: ' + str(int(moveArm.value))
+            font_size: 40
+            bold: True
+            center_x: root.width * 0.22
+            y: root.height * 0.15
+            color: 1, 1, 1, 1
+
+<Slider>:
+    cursor_image: "NewSliderKnob.png"
+    value_track: True
+    value_track_color: 0.9, 0.9, 0.9, 1
+    canvas:
+        Color:
+            rgba: 0, 0, 0, 1
+
